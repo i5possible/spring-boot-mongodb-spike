@@ -5,12 +5,12 @@ buildscript {
     repositories {
         mavenCentral()
         maven {
-            url "https://plugins.gradle.org/m2/"
+            url("https://plugins.gradle.org/m2/")
         }
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-	classpath 'com.sourcemuse.gradle.plugin:gradle-mongo-plugin:0.14.0'
+	    classpath('com.sourcemuse.gradle.plugin:gradle-mongo-plugin:0.14.0')
     }
 }
 
@@ -20,6 +20,7 @@ apply plugin: 'mongo'
 
 jar {
     baseName = 'my-mongodb-spike'
+    version = '0.1.0'
 }
 
 sourceCompatibility = 1.8
@@ -32,9 +33,9 @@ repositories {
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
     testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+    compile('org.springframework.data:spring-data-mongodb:1.9.5.RELEASE')
 }
 
 bootRun {
     //jvmArgs "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005"
 }
-
