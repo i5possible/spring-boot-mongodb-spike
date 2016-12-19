@@ -1,4 +1,4 @@
-package spike.monogodb.web;
+package spike.mongodb.web;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
