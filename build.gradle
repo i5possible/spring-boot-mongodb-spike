@@ -10,11 +10,13 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	classpath 'com.sourcemuse.gradle.plugin:gradle-mongo-plugin:0.14.0'
     }
 }
 
 apply plugin: 'java'
 apply plugin: 'spring-boot'
+apply plugin: 'mongo'
 
 jar {
     baseName = 'my-mongodb-spike'
@@ -34,9 +36,5 @@ dependencies {
 
 bootRun {
     //jvmArgs "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005"
-}
-
-springBoot {
-    mainClass = "main.Main"
 }
 
