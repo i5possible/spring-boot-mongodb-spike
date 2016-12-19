@@ -1,9 +1,11 @@
-package spike.monogodb.web;
+package spike.mongodb;
 
-import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import spike.monogodb.web.HelloWorldController;
+
+import static org.assertj.core.api.Java6Assertions.assertThat;
 
 public class HelloWorldControllerTest {
     @Test
@@ -12,7 +14,7 @@ public class HelloWorldControllerTest {
         //when
         ResponseEntity responseEntity = new HelloWorldController().helloWorld();
         //then
-        Assert.assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
-        Assert.assertEquals("HelloWorld", responseEntity.getBody().toString());
+        assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(responseEntity.getBody().toString()).isEqualTo("HelloWorld");
     }
 }

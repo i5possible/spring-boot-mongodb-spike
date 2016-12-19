@@ -1,4 +1,4 @@
-package spike.monogodb;
+package spike.mongodb;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
