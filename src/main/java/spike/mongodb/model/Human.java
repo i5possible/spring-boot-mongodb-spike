@@ -2,16 +2,16 @@ package spike.mongodb.model;
 
 import org.springframework.data.annotation.Id;
 
-public class HumanModel {
+public class Human {
     @Id
     public String Id;
 
     public String name;
 
-    public HumanModel() {
+    public Human() {
     }
 
-    public HumanModel(String name) {
+    public Human(String name) {
         this.name = name;
     }
 

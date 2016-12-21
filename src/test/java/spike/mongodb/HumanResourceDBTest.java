@@ -6,8 +6,8 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import spike.mongodb.dao.HumanRepository;
-import spike.mongodb.model.HumanModel;
+import spike.mongodb.repository.HumanRepository;
+import spike.mongodb.model.Human;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;
 
@@ -19,26 +19,26 @@ public class HumanResourceDBTest {
 
     @Before
     public void setUp() throws Exception {
-        humanRepository.save(new HumanModel("User1"));
+        humanRepository.save(new Human("User1"));
     }
 
     @Test
     public void shouldSetIdWhenSave () {
         //given
-        HumanModel humanModel = new HumanModel();
+        Human human = new Human();
         //when
-        humanModel.setName("User2");
-        humanRepository.save(humanModel);
+        human.setName("User2");
+        humanRepository.save(human);
         //then
-        assertThat(humanModel.getId()).isNotNull();
+        assertThat(human.getId()).isNotNull();
     }
     
     @Test
     public void findByName () {
         //given
         //when
-        HumanModel humanModel = humanRepository.findByName("User1");
+        Human human = humanRepository.findByName("User1");
         //then
-        assertThat(humanModel.getName()).isEqualTo("User1");
+        assertThat(human.getName()).isEqualTo("User1");
     }
 }
