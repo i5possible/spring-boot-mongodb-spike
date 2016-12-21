@@ -1,10 +1,11 @@
 package spike.mongodb.model;
 
-import org.springframework.data.annotation.Id;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Human {
-    @Id
-    public String Id;
+
+    public String id;
 
     public String name;
 
@@ -16,7 +17,7 @@ public class Human {
     }
 
     public String getId() {
-        return Id;
+        return id;
     }
 
     public String getName() {
