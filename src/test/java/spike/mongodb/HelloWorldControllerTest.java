@@ -8,6 +8,7 @@ import spike.mongodb.web.HelloWorldController;
 import static org.assertj.core.api.Java6Assertions.assertThat;
 
 public class HelloWorldControllerTest {
+
     @Test
     public void shouldReturnHelloWorldWithOK () {
         //given
