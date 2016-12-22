@@ -3,7 +3,6 @@ package spike.mongodb.web;
 import org.junit.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import spike.mongodb.web.HelloWorldController;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;
 
