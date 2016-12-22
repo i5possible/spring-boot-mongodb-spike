@@ -7,6 +7,7 @@ public class Human {
 
     private String id;
     private String name;
+    private String password;
 
 
     public Human() {
@@ -26,5 +27,9 @@ public class Human {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
