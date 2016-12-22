@@ -1,4 +1,4 @@
-package spike.mongodb;
+package spike.mongodb.web;
 
 import org.junit.Test;
 import org.springframework.http.HttpStatus;
