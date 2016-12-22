@@ -34,7 +34,7 @@ public class HumanResourceDBTest {
     }
     
     @Test
-    public void findByName () {
+    public void shouldReturnHumanInfoGivenName () {
         //given
         //when
         Human human = humanRepository.findByName("User1");
