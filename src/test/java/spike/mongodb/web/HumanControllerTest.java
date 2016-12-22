@@ -18,6 +18,6 @@ public class HumanControllerTest {
         ResponseEntity<Human> humanResponseEntity = controller.get("xxxx");
         //then
         assertThat(humanResponseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);
-        assertThat(humanResponseEntity.getBody().getName()).isEqualTo("lianghong");
+        assertThat(humanResponseEntity.getBody().getName()).isEqualTo("LiangHong");
     }
 }
