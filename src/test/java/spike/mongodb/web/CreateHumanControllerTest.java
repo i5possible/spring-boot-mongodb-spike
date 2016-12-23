@@ -1,38 +1,34 @@
 package spike.mongodb.web;
 
-import org.junit.Before;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import spike.mongodb.model.Human;
 
-import static org.assertj.core.api.Java6Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
+
 
 public class CreateHumanControllerTest {
 
-    //? Why this can't be injected.
-    CreateHumanController createHumanController;
-
-    @Autowired
-    GetHumanController getHumanController;
-
-    Human human;
-
-    @Before
-    public void setUp() throws Exception {
-        human = new Human("Liang Hong", "123456");
-        createHumanController = new CreateHumanController();
+    @Test
+    public void shouldReturnNotFoundWhenHumanIsEmpty() {
+        //given
+        CreateHumanController createHumanController = new CreateHumanController(human -> {
+        });
+        //when
+        ResponseEntity responseEntity = createHumanController.createHuman(new Human());
+        //then
+        assertEquals(HttpStatus.NOT_FOUND, responseEntity.getStatusCode());
     }
 
     @Test
-    public void shouldReturn202WhenHumanCreated() {
+    public void shouldReturnAcceptedWhenHumanIsGiven() {
         //given
-        System.out.println(human.getName());
-        System.out.println(createHumanController);
+        CreateHumanController createHumanController = new CreateHumanController(human -> {
+        });
         //when
-        ResponseEntity responseEntity = createHumanController.save(human);
+        ResponseEntity responseEntity = createHumanController.createHuman(new Human("LiangHong"));
         //then
-        assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.ACCEPTED);
+        assertEquals(HttpStatus.ACCEPTED,responseEntity.getStatusCode());
     }
 }
