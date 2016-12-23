@@ -10,25 +10,17 @@ import static org.junit.Assert.assertEquals;
 
 public class CreateHumanControllerTest {
 
-    @Test
-    public void shouldReturnNotFoundWhenHumanIsEmpty() {
-        //given
-        CreateHumanController createHumanController = new CreateHumanController(human -> {
-        });
-        //when
-        ResponseEntity responseEntity = createHumanController.createHuman(new Human(""));
-        //then
-        assertEquals(HttpStatus.NOT_FOUND, responseEntity.getStatusCode());
-    }
+    boolean isCreateHumanServiceInvoked = false;
 
     @Test
     public void shouldReturnAcceptedWhenHumanIsGiven() {
-        //given
-        CreateHumanController createHumanController = new CreateHumanController(human -> {
-        });
-        //when
+        CreateHumanController createHumanController = new CreateHumanController(h -> invokeCreateHumanService());
         ResponseEntity responseEntity = createHumanController.createHuman(new Human("LiangHong"));
-        //then
+        assertEquals(isCreateHumanServiceInvoked,true);
         assertEquals(HttpStatus.ACCEPTED,responseEntity.getStatusCode());
+    }
+
+    private void invokeCreateHumanService() {
+        isCreateHumanServiceInvoked = true;
     }
 }
