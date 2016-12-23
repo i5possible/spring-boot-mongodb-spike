@@ -16,7 +16,7 @@ public class CreateHumanControllerTest {
         CreateHumanController createHumanController = new CreateHumanController(human -> {
         });
         //when
-        ResponseEntity responseEntity = createHumanController.createHuman(new Human());
+        ResponseEntity responseEntity = createHumanController.createHuman(new Human(""));
         //then
         assertEquals(HttpStatus.NOT_FOUND, responseEntity.getStatusCode());
     }
