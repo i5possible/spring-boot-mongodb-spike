@@ -16,7 +16,7 @@ public class CreateHumanController {
         this.createHumanService = createHumanService;
     }
 
-    public ResponseEntity createHuman (@RequestBody Human human) {
+    public ResponseEntity createHuman(@RequestBody Human human) {
         return human.isEmpty() ? new ResponseEntity(HttpStatus.NOT_FOUND) : new ResponseEntity(HttpStatus.ACCEPTED);
     }
 }
