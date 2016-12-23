@@ -35,14 +35,4 @@ public class CreateHumanControllerTest {
         //then
         assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.ACCEPTED);
     }
-
-    @Test
-    public void shouldReturnHumanInfoWhenGetHumanById() {
-        //given
-        String humanId = "";
-        //when
-        human = getHumanController.get(humanId);
-        //then
-        assertThat(human.getName()).isEqualTo("LiangHong");
-    }
 }
