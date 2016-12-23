@@ -1,21 +1,22 @@
 package spike.mongodb.web;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import spike.mongodb.model.Human;
+import spike.mongodb.services.CreateHumanService;
 
 @RestController
 public class CreateHumanController {
-    @Autowired
-    CreateHumanController () {
+    CreateHumanService createHumanService;
 
+    public CreateHumanController(CreateHumanService createHumanService) {
+        this.createHumanService = createHumanService;
     }
 
-    public ResponseEntity save (@RequestBody Human human) {
-        return new ResponseEntity(HttpStatus.ACCEPTED);
+    public ResponseEntity createHuman (@RequestBody Human human) {
+        return human.isEmpty() ? new ResponseEntity(HttpStatus.NOT_FOUND) : new ResponseEntity(HttpStatus.ACCEPTED);
     }
 }
