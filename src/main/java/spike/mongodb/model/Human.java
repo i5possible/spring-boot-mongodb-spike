@@ -2,13 +2,17 @@ package spike.mongodb.model;
 
 import org.springframework.stereotype.Component;
 
+import javax.validation.constraints.NotNull;
+
 @Component
 public class Human {
 
+    @NotNull
     private String id;
+    @NotNull
     private String name;
+    @NotNull
     private String password;
-
 
     public Human() {
     }
@@ -16,6 +20,7 @@ public class Human {
     public Human(String name) {
         this.name = name;
     }
+
     public Human(String name, String password) {
         this.name = name;
         this.password = password;
@@ -39,5 +44,9 @@ public class Human {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public boolean isEmpty() {
+        return name.isEmpty();
     }
 }
