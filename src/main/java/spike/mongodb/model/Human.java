@@ -14,6 +14,9 @@ public class Human {
     @NotNull
     private String password;
 
+    private String email;
+    private int age;
+
     public Human() {
     }
 
@@ -46,7 +49,19 @@ public class Human {
         this.password = password;
     }
 
-    public boolean isEmpty() {
-        return name.isEmpty();
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }
