@@ -18,8 +18,8 @@ public class UpdateHumanControllerTest {
         UpdateHumanService updateHumanService = (human1, id1) -> InvokeUpdateHumanService();
         UpdateHumanController updateHumanController = new UpdateHumanController(updateHumanService);
         ResponseEntity responseEntity = updateHumanController.updateHuman(human, id);
-        assertEquals(responseEntity.getStatusCode(), HttpStatus.ACCEPTED);
-        assertEquals(isUpdateHumanServiceInvoked, true);
+        assertEquals(HttpStatus.ACCEPTED,responseEntity.getStatusCode());
+        assertEquals(true,isUpdateHumanServiceInvoked);
     }
 
     private void InvokeUpdateHumanService() {
