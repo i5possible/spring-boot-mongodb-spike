@@ -4,7 +4,6 @@ import org.junit.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import spike.mongodb.model.Human;
-import spike.mongodb.services.UpdateHumanService;
 
 import static org.junit.Assert.assertEquals;
 
@@ -15,8 +14,7 @@ public class UpdateHumanControllerTest {
     public void shouldInvokeServiceAndReturnAcceptedWhenUpdateHuman() {
         Human human = new Human();
         String id = "id";
-        UpdateHumanService updateHumanService = (human1, id1) -> InvokeUpdateHumanService();
-        UpdateHumanController updateHumanController = new UpdateHumanController(updateHumanService);
+        UpdateHumanController updateHumanController = new UpdateHumanController((human1, id1) -> InvokeUpdateHumanService());
         ResponseEntity responseEntity = updateHumanController.updateHuman(human, id);
         assertEquals(HttpStatus.ACCEPTED,responseEntity.getStatusCode());
         assertEquals(true,isUpdateHumanServiceInvoked);
