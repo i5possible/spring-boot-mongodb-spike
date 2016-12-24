@@ -9,7 +9,7 @@ import static org.assertj.core.api.Java6Assertions.assertThat;
 public class HelloWorldControllerTest {
 
     @Test
-    public void shouldReturnHelloWorldWithOK () {
+    public void shouldReturnHelloWorldWithOK() {
         //given
         //when
         ResponseEntity responseEntity = new HelloWorldController().helloWorld();

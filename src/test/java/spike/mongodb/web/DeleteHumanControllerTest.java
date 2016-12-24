@@ -10,13 +10,13 @@ public class DeleteHumanControllerTest {
     private boolean isDeleteHumanServiceInvokded = false;
 
     @Test
-    public void shouldInvokeDeleteHumanServiceAndReturnAccepted () {
+    public void shouldInvokeDeleteHumanServiceAndReturnAccepted() {
         String id = "id";
         DeleteHumanController deleteHumanController = new DeleteHumanController(
                 id1 -> isDeleteHumanServiceInvokded = true);
         ResponseEntity responseEntity = deleteHumanController.deleteHuman(id);
-        assertEquals(HttpStatus.ACCEPTED,responseEntity.getStatusCode());
-        assertEquals(true,isDeleteHumanServiceInvokded);
+        assertEquals(HttpStatus.ACCEPTED, responseEntity.getStatusCode());
+        assertEquals(true, isDeleteHumanServiceInvokded);
     }
 
 }

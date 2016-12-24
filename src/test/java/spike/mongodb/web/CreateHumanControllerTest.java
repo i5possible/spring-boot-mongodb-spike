@@ -14,13 +14,11 @@ public class CreateHumanControllerTest {
 
     @Test
     public void shouldInvokeServiceAndReturnAcceptedWhenCreateHuman() {
-        CreateHumanController createHumanController = new CreateHumanController(h -> invokeCreateHumanService());
+        CreateHumanController createHumanController = new CreateHumanController(
+                h -> isCreateHumanServiceInvoked = true);
         ResponseEntity responseEntity = createHumanController.createHuman(new Human("LiangHong"));
         assertEquals(isCreateHumanServiceInvoked, true);
         assertEquals(HttpStatus.ACCEPTED, responseEntity.getStatusCode());
     }
 
-    private void invokeCreateHumanService() {
-        isCreateHumanServiceInvoked = true;
-    }
 }
