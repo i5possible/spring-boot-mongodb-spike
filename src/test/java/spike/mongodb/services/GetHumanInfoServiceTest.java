@@ -16,4 +16,12 @@ public class GetHumanInfoServiceTest {
         Optional<Human> human = humanService.getHuman(id);
         assertEquals(true, human.isPresent());
     }
+    
+    @Test
+    public void shouldReturnEmptyGivenInvalidId () {
+        String id = "invalidId";
+        GetHumanServiceImpl humanService = new GetHumanServiceImpl();
+        Optional<Human> human = humanService.getHuman(id);
+        assertEquals(false, human.isPresent());
+    }
 }
