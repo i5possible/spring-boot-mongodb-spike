@@ -8,6 +8,6 @@ public class GetHumanServiceImpl implements GetHumanService {
 
     @Override
     public Optional<Human> getHuman(String id) {
-        return Optional.empty();
+        return Optional.of(new Human());
     }
 }
