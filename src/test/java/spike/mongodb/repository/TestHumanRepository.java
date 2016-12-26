@@ -12,11 +12,9 @@ public class TestHumanRepository extends TestRepository<Human, String> implement
 
     public TestHumanRepository() {
         Human lh = new Human();
+        lh.setId("validId");
         lh.setName("LiangHong");
-        lh.setPassword("1qaz!QAZ");
-        lh.setAge(25);
-        lh.setEmail("Email");
-        humanMap.put("lh", lh);
+        humanMap.put("validId", lh);
     }
 
     @Override
