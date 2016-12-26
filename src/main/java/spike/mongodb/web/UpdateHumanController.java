@@ -1,5 +1,6 @@
 package spike.mongodb.web;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestAttribute;
@@ -12,6 +13,7 @@ import spike.mongodb.services.UpdateHumanService;
 public class UpdateHumanController {
     UpdateHumanService updateHumanService;
 
+    @Autowired
     public UpdateHumanController(UpdateHumanService updateHumanService) {
         this.updateHumanService = updateHumanService;
     }

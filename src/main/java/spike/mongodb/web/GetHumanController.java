@@ -10,7 +10,6 @@ import spike.mongodb.services.GetHumanService;
 public class GetHumanController {
     private final GetHumanService getHumanService;
 
-    // TODO: 23/12/2016 I'd like to get an error without the Autowired
     @Autowired
     public GetHumanController(GetHumanService getHumanService) {
         this.getHumanService = getHumanService;

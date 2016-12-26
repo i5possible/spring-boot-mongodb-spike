@@ -10,9 +10,9 @@ import java.util.Optional;
 @Service
 public class GetHumanServiceImpl implements GetHumanService {
 
-    @Autowired
     private HumanRepository humanRepository;
 
+    @Autowired
     public GetHumanServiceImpl(HumanRepository humanRepository) {
         this.humanRepository = humanRepository;
     }

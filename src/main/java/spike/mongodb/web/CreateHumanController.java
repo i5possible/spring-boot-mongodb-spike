@@ -1,6 +1,7 @@
 package spike.mongodb.web;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,6 +13,7 @@ import spike.mongodb.services.CreateHumanService;
 public class CreateHumanController {
     CreateHumanService createHumanService;
 
+    @Autowired
     public CreateHumanController(CreateHumanService createHumanService) {
         this.createHumanService = createHumanService;
     }
