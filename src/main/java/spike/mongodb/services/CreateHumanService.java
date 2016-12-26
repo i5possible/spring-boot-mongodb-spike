@@ -4,5 +4,5 @@ import spike.mongodb.model.Human;
 
 @FunctionalInterface
 public interface CreateHumanService {
-    public void createHuman (Human human);
+    public Human createHuman (Human human);
 }

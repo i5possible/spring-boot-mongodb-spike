@@ -4,6 +4,7 @@ import spike.mongodb.model.Human;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 
 public class TestHumanRepository extends TestRepository<Human, String> implements HumanRepository {
@@ -26,5 +27,11 @@ public class TestHumanRepository extends TestRepository<Human, String> implement
     @Override
     public Human findOne(String id) {
         return humanMap.get(id);
+    }
+
+    @Override
+    public Human save (Human human) {
+        human.setId(UUID.randomUUID().toString());
+        return human;
     }
 }
