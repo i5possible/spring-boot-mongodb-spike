@@ -12,8 +12,9 @@ public class GetHumanInfoServiceTest {
     private TestHumanRepository testHumanRepository = new TestHumanRepository();
     @Test
     public void shouldReturnHumanInfoGivenValidId() {
+        String id = "validId";
         GetHumanServiceImpl getHumanService = new GetHumanServiceImpl(testHumanRepository);
-        Optional<Human> humanOptional = getHumanService.getHuman("lh");
+        Optional<Human> humanOptional = getHumanService.getHuman(id);
         assertEquals(human.getName(), humanOptional.get().getName());
     }
 
