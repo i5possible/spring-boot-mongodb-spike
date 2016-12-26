@@ -107,7 +107,7 @@ public class TestRepository<T, ID extends Serializable> implements MongoReposito
 
     @Override
     public <S extends T> long count(Example<S> example) {
-        return 0;
+        return 1;
     }
 
     @Override
