@@ -32,4 +32,9 @@ public class TestHumanRepository extends TestRepository<Human, String> implement
         human.setId(UUID.randomUUID().toString());
         return human;
     }
+
+    @Override
+    public void delete (String id) {
+        humanMap.remove(id);
+    }
 }
