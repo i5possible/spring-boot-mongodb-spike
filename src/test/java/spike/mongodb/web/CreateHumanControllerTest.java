@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import spike.mongodb.model.Human;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 
 public class CreateHumanControllerTest {
@@ -20,7 +21,7 @@ public class CreateHumanControllerTest {
                     return null;
                 });
         ResponseEntity responseEntity = createHumanController.createHuman(new Human("LiangHong"));
-        assertEquals(isCreateHumanServiceInvoked, true);
+        assertTrue(isCreateHumanServiceInvoked);
         assertEquals(HttpStatus.ACCEPTED, responseEntity.getStatusCode());
     }
 

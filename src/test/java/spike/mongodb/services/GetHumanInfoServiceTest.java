@@ -6,6 +6,7 @@ import spike.mongodb.repository.TestHumanRepository;
 
 import java.util.Optional;
 
+import static junit.framework.TestCase.assertFalse;
 import static org.junit.Assert.assertEquals;
 public class GetHumanInfoServiceTest {
     private Human human = generateDummyHuman();
@@ -23,7 +24,7 @@ public class GetHumanInfoServiceTest {
         String id = "invalidId";
         GetHumanServiceImpl humanService = new GetHumanServiceImpl(testHumanRepository);
         Optional<Human> human = humanService.getHuman(id);
-        assertEquals(false, human.isPresent());
+        assertFalse(human.isPresent());
     }
 
     private Human generateDummyHuman() {

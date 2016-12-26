@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import spike.mongodb.model.Human;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class UpdateHumanControllerTest {
 
@@ -22,7 +23,7 @@ public class UpdateHumanControllerTest {
                 });
         ResponseEntity responseEntity = updateHumanController.updateHuman(human, id);
         assertEquals(HttpStatus.ACCEPTED, responseEntity.getStatusCode());
-        assertEquals(true, isUpdateHumanServiceInvoked);
+        assertTrue(isUpdateHumanServiceInvoked);
     }
 
 }
