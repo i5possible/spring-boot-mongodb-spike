@@ -20,7 +20,7 @@ public class CreateHumanController {
         this.createHumanService = createHumanService;
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/human/create")
+    @RequestMapping(method = RequestMethod.POST, value = "/human")
     public ResponseEntity createHuman(@RequestBody Human human) {
         createHumanService.createHuman(human);
         return ResponseEntity.status(HttpStatus.ACCEPTED).build();

@@ -18,7 +18,7 @@ public class GetHumanController {
         this.getHumanService = getHumanService;
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/human/get/{humanId}")
+    @RequestMapping(method = RequestMethod.GET, value = "/human/{humanId}")
     public ResponseEntity get(@PathVariable(value = "humanId") String humanId) {
         return getHumanService.getHuman(humanId).map(ResponseEntity::ok).orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }

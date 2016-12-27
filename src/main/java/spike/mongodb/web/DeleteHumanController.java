@@ -18,7 +18,7 @@ public class DeleteHumanController {
         this.deleteHumanService = deleteHumanService;
     }
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/human/delete/{humanId}")
+    @RequestMapping(method = RequestMethod.DELETE, value = "/human/{humanId}")
     public ResponseEntity deleteHuman(@PathVariable(name = "humanId") String humanId) {
         deleteHumanService.deleteHuman(humanId);
         return ResponseEntity.status(HttpStatus.ACCEPTED).build();
