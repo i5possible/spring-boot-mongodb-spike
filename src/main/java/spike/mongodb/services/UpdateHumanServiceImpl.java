@@ -16,6 +16,7 @@ public class UpdateHumanServiceImpl implements UpdateHumanService {
 
     @Override
     public Human updateHuman(Human newHuman, String toUpdateHumanID) {
+        newHuman.setId(toUpdateHumanID);
         return humanRepository.save(newHuman);
     }
 }
