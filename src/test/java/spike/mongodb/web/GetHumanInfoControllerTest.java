@@ -22,7 +22,7 @@ public class GetHumanInfoControllerTest {
     }
 
     @Test
-    public void shuoldReturnNotFoundIfNoneMatch() throws Exception {
+    public void shouldReturnNotFoundIfNoneMatch() throws Exception {
         GetHumanController getHumanController = new GetHumanController(id -> Optional.empty());
         ResponseEntity responseEntity = getHumanController.get("someone");
         assertThat(responseEntity.getStatusCode(), is(HttpStatus.NOT_FOUND));
