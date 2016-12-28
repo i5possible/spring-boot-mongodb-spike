@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 import spike.mongodb.services.GetHumanService;
 
 @RestController
-public class GetHumanController {
+public class RetrieveHumanController {
     private final GetHumanService getHumanService;
 
     @Autowired
-    public GetHumanController(GetHumanService getHumanService) {
+    public RetrieveHumanController(GetHumanService getHumanService) {
         this.getHumanService = getHumanService;
     }
 
