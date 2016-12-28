@@ -1,0 +1,64 @@
+[
+  {
+    "description": "shouldInvokeServiceAndReturnAcceptedWhenCreateHuman",
+    "request": {
+      "uri": "/human",
+      "method":"POST",
+      "json":{
+        "name":"Contract",
+        "password":"1qaz!QAZ",
+        "age":25,
+        "email":"Email"
+      }
+    },
+    "response": {
+      "status": 202
+    }
+  },
+  {
+    "description": "shouldReturnHumanIsMatched",
+    "request": {
+      "uri": "/human/5863558a893d5e92ec022b88",
+      "method":"GET"
+    },
+    "response": {
+      "status": 200
+    }
+  },
+  {
+    "description": "shouldReturnNotFoundIfNoneMatch",
+    "request": {
+      "uri": "/human/5863558a893d5e92ec022b8",
+      "method":"GET"
+    },
+    "response": {
+      "status": 404
+    }
+  },
+  {
+    "description": "shouldInvokeServiceAndReturnAcceptedWhenUpdateHuman",
+    "request": {
+      "uri": "/human/5861d2aa893d5e60d8490255",
+      "method":"PUT",
+      "json":{
+        "name":"PUT Contract",
+        "password":"111111111",
+        "age":111,
+        "email":"11111111"
+      }
+    },
+    "response": {
+      "status": 202
+    }
+  },
+  {
+    "description": "shouldInvokeDeleteHumanServiceAndReturnAccepted",
+    "request": {
+      "uri": "/human/5863552e893d5e92dcd29a16",
+      "method":"DELETE"
+    },
+    "response": {
+      "status": 202
+    }
+  }
+]
