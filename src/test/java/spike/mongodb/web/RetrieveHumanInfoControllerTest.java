@@ -15,16 +15,16 @@ public class RetrieveHumanInfoControllerTest {
     @Test
     public void shouldReturnHumanIsMatched() {
         Human human = new Human();
-        GetHumanController getHumanController = new GetHumanController(id -> Optional.of(human));
-        ResponseEntity responseEntity = getHumanController.get("someone");
+        RetrieveHumanController retrieveHumanController = new RetrieveHumanController(id -> Optional.of(human));
+        ResponseEntity responseEntity = retrieveHumanController.get("someone");
         assertThat(responseEntity.getStatusCode(), is(HttpStatus.OK));
         assertThat(responseEntity.getBody(), is(human));
     }
 
     @Test
     public void shouldReturnNotFoundIfNoneMatch() throws Exception {
-        GetHumanController getHumanController = new GetHumanController(id -> Optional.empty());
-        ResponseEntity responseEntity = getHumanController.get("someone");
+        RetrieveHumanController retrieveHumanController = new RetrieveHumanController(id -> Optional.empty());
+        ResponseEntity responseEntity = retrieveHumanController.get("someone");
         assertThat(responseEntity.getStatusCode(), is(HttpStatus.NOT_FOUND));
     }
 }
