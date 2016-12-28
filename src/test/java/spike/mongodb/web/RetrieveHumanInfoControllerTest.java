@@ -10,7 +10,7 @@ import java.util.Optional;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-public class GetHumanInfoControllerTest {
+public class RetrieveHumanInfoControllerTest {
 
     @Test
     public void shouldReturnHumanIsMatched() {
