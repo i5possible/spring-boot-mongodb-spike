@@ -32,9 +32,11 @@ repositories {
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
-    testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
     compile('org.springframework.data:spring-data-mongodb:1.9.5.RELEASE')
     compile('com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.7.3')
+    testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+    testCompile('com.github.macdao:moscow:0.1.0')
+    testRuntime('com.squareup.okhttp3:okhttp:3.1.2')
 }
 
 bootRun {
