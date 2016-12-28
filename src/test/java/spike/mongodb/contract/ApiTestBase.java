@@ -29,7 +29,7 @@ public abstract class ApiTestBase {
     protected Map<String, String> assertContract(String description) {
         return new ContractAssertion(container.findContracts(description))
                 .setPort(port)
-                .setExecutionTimeout(200)
+                .setExecutionTimeout(2000)
                 .assertContract();
     }
 }
