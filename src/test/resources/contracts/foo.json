@@ -1,0 +1,11 @@
+[
+  {
+    "description": "should_response_text_foo",
+    "request": {
+      "uri": "/foo"
+    },
+    "response": {
+      "text": "foo"
+    }
+  }
+]
